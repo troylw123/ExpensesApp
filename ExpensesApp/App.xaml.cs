@@ -18,10 +18,8 @@ namespace ExpensesApp
         public App(string databasePath)
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
-
             DatabasePath = databasePath;
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
