@@ -1,11 +1,8 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using System.IO;
 
 namespace ExpensesApp.Droid
 {
@@ -19,7 +16,12 @@ namespace ExpensesApp.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            string db_name = "expenses_db.db3";
+            string folder_path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string full_path = Path.Combine(folder_path, db_name);
+
+            LoadApplication(new App(full_path));
         }
     }
 }
