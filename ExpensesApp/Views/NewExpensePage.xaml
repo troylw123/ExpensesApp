@@ -16,7 +16,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="16" BindingContext="{Binding Source={StaticResource vm}}">
-            <TableView>
+            <TableView x:Name="expenseTableView">
                 <TableRoot>
                     <TableSection Title="New Expense">
                         <EntryCell Label="Name:"
@@ -24,6 +24,7 @@
                                    Text="{Binding ExpenseName, Mode=TwoWay}" />
                         <EntryCell Label="Amount:"
                                    Placeholder="Expense Amount"
+                                   Keyboard="Numeric"
                                    Text="{Binding ExpenseAmount, Mode=TwoWay}" />
                         <EntryCell Label="Description:"
                                    Placeholder="Expense Description"
