@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="CustomRenderers\CustomProgressBarRenderer.cs" />
     <Compile Include="CustomRenderers\CustomTextCellRenderer.cs" />
+    <Compile Include="Dependencies\Share.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -170,4 +171,5 @@
     <BundleResource Include="Resources\add%402x.png" />
     <BundleResource Include="Resources\add%403x.png" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

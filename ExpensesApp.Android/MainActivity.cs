@@ -21,6 +21,8 @@ namespace ExpensesApp.Droid
             string folder_path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string full_path = Path.Combine(folder_path, db_name);
 
+            //DependencyService.Register<Share>();
+
             LoadApplication(new App(full_path));
         }
     }
