@@ -1,5 +1,6 @@
 ﻿using ExpensesApp.Models;
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Xamarin.Forms;
 
@@ -63,9 +64,13 @@ namespace ExpensesApp.ViewModels
         }
 
         public Command SaveExpenseCommand { get; set; }
+        public ObservableCollection<string> Categories { get; set; }
         public NewExpenseVM()
         {
+            Categories = new ObservableCollection<string>();
+            ExpenseDate = DateTime.Today;
             SaveExpenseCommand = new Command(InsertExpense);
+            GetCategories();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -92,6 +97,18 @@ namespace ExpensesApp.ViewModels
                 Application.Current.MainPage.Navigation.PopAsync();
             else
                 Application.Current.MainPage.DisplayAlert("Error", "No items were inserted", "OK");
+        }
+
+        private void GetCategories()
+        {
+            Categories.Clear();
+            Categories.Add("Housing");
+            Categories.Add("Debt");
+            Categories.Add("Health");
+            Categories.Add("Food");
+            Categories.Add("Personal");
+            Categories.Add("Travel");
+            Categories.Add("Other");
         }
     }
 }
