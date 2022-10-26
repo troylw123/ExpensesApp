@@ -31,7 +31,7 @@
                                    Text="{Binding ExpenseDescription, Mode=TwoWay}" />
                         <ViewCell>
                             <StackLayout Orientation="Horizontal"
-                                         Margin="16">
+                                         Margin="16, 0">
                                 <Label Text="Date:"
                                        VerticalOptions="Center"/>
                                 <DatePicker  Date="{Binding ExpenseDate, Mode=TwoWay}"
@@ -41,7 +41,7 @@
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal"
-                                         Margin="16">
+                                         Margin="16, 0">
                                 <Label Text="Category:"
                                        VerticalOptions="Center"/>
                                 <Picker SelectedItem="{Binding ExpenseCategory, Mode=TwoWay}"

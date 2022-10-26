@@ -1,5 +1,4 @@
 ﻿using ExpensesApp.ViewModels;
-using System;
 
 using Xamarin.Forms;
 
