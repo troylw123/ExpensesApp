@@ -25,7 +25,7 @@ namespace ExpensesApp.Droid.CustomRenderers
             else if (e.NewElement.Progress < 0.5)
                 Control.ProgressDrawable.SetTint(Color.Blue.ToAndroid());
             else if (e.NewElement.Progress < 0.75)
-                Control.ProgressDrawable.SetTint(Color.Yellow.ToAndroid());
+                Control.ProgressDrawable.SetTint(Color.Orange.ToAndroid());
             else
                 Control.ProgressDrawable.SetTint(Color.Red.ToAndroid());
 

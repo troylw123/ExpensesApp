@@ -19,7 +19,7 @@ namespace ExpensesApp.iOS.CustomRenderers
             else if (e.NewElement.Progress < 0.5)
                 Control.ProgressTintColor = Color.Blue.ToUIColor();
             else if (e.NewElement.Progress < 0.75)
-                Control.ProgressTintColor = Color.Yellow.ToUIColor();
+                Control.ProgressTintColor = Color.Orange.ToUIColor();
             else
                 Control.ProgressTintColor = Color.Red.ToUIColor();
 
