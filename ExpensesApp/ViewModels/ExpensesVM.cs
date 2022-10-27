@@ -35,10 +35,6 @@ namespace ExpensesApp.ViewModels
             Application.Current.MainPage.Navigation.PushAsync(new NewExpensePage());
         }
 
-        //public void ShareReport()
-        //{
-        //    IShare share;
-        //    share.Show("", "", "");
-        //}
+
     }
 }
