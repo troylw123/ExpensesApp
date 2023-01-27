@@ -1,61 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:ExpensesApp.ViewModels"
-             xmlns:effects="clr-namespace:ExpensesApp.Effects"
-             x:Class="ExpensesApp.Views.NewExpensePage">
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ExpensesApp.Views.NewExpensePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:effects="clr-namespace:ExpensesApp.Effects"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:vm="clr-namespace:ExpensesApp.ViewModels"
+    ios:Page.UseSafeArea="True">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <vm:NewExpenseVM x:Key="vm"/>
+            <vm:NewExpenseVM x:Key="vm" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save"
-                     Command="{Binding Source={StaticResource vm}, Path=SaveExpenseCommand}"/>
+        <ToolbarItem Command="{Binding Source={StaticResource vm}, Path=SaveExpenseCommand}" Text="Save" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="16" BindingContext="{Binding Source={StaticResource vm}}">
             <TableView x:Name="expenseTableView">
                 <TableRoot>
                     <TableSection Title="New Expense">
-                        <EntryCell Label="Name:"
-                                   Placeholder="Expense Name"
-                                   Text="{Binding ExpenseName, Mode=TwoWay}" />
-                        <EntryCell Label="Amount:"
-                                   Placeholder="Expense Amount"
-                                   Keyboard="Numeric"
-                                   Text="{Binding ExpenseAmount, Mode=TwoWay}" />
-                        <EntryCell Label="Description:"
-                                   Placeholder="Expense Description"
-                                   Text="{Binding ExpenseDescription, Mode=TwoWay}" />
+                        <EntryCell
+                            Label="Name:"
+                            Placeholder="Expense Name"
+                            Text="{Binding ExpenseName, Mode=TwoWay}" />
+                        <EntryCell
+                            Keyboard="Numeric"
+                            Label="Amount:"
+                            Placeholder="Expense Amount"
+                            Text="{Binding ExpenseAmount, Mode=TwoWay}" />
+                        <EntryCell
+                            Label="Description:"
+                            Placeholder="Expense Description"
+                            Text="{Binding ExpenseDescription, Mode=TwoWay}" />
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal"
-                                         Margin="16, 0">
-                                <Label Text="Date:"
-                                       VerticalOptions="Center"/>
-                                <DatePicker  Date="{Binding ExpenseDate, Mode=TwoWay}"
-                                             VerticalOptions="Center"
-                                             HorizontalOptions="FillAndExpand">
+                            <StackLayout Margin="16,0" Orientation="Horizontal">
+                                <Label Text="Date:" VerticalOptions="Center" />
+                                <DatePicker
+                                    Date="{Binding ExpenseDate, Mode=TwoWay}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center">
                                     <DatePicker.Effects>
-                                        <effects:SelectedEffect/>
+                                        <effects:SelectedEffect />
                                     </DatePicker.Effects>
                                 </DatePicker>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal"
-                                         Margin="16, 0">
-                                <Label Text="Category:"
-                                       VerticalOptions="Center"/>
-                                <Picker SelectedItem="{Binding ExpenseCategory, Mode=TwoWay}"
-                                        ItemsSource="{Binding Categories}"
-                                        Title="Select Category"
-                                        VerticalOptions="Center"
-                                        HorizontalOptions="FillAndExpand">
+                            <StackLayout Margin="16,0" Orientation="Horizontal">
+                                <Label Text="Category:" VerticalOptions="Center" />
+                                <Picker
+                                    Title="Select Category"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemsSource="{Binding Categories}"
+                                    SelectedItem="{Binding ExpenseCategory, Mode=TwoWay}"
+                                    VerticalOptions="Center">
                                     <Picker.Effects>
-                                        <effects:SelectedEffect/>
+                                        <effects:SelectedEffect />
                                     </Picker.Effects>
                                 </Picker>
                             </StackLayout>
